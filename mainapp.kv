@@ -1,0 +1,74 @@
+
+<Mm>:
+    Bex:
+        canvas:
+            Color:
+                rgba: 1,1,1,1
+
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+                    
+        size_hint: None, None
+        size: self.parent.size
+        pos_hint: {'center_x':.5, 'center_y':.5}
+
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint_x: None
+        min_width: 100
+        pos_hint: {'center_x':.5,'bottom':1}
+
+        BoxLayout:
+            orientation: "vertical"
+            size_hint_y: None
+            height: 80
+            Label:
+                text: "Distance from the pole(px):"+str(int(txtd.value))
+            Slider:
+                id: txtd
+                min: 0
+                max: 100
+                value : 0
+
+        BoxLayout:
+            orientation: "vertical"
+            size_hint_y: None
+            height: 80
+            Label:
+                text: "Distance increase interval(px):" +str(int(distanceincr.value))    
+            Slider:
+                id: distanceincr
+                value: 10
+
+        BoxLayout:
+            orientation: "vertical"
+            size_hint_y: None
+            height: 80
+            Label:
+                text: "Start angle relative to the Ray pole(degrees):" +str(int(txtanglestart.value))               
+            Slider:
+                id: txtanglestart
+                value: -10
+
+        BoxLayout:
+            orientation: "vertical"
+            size_hint_y: None
+            height: 80
+            Label:
+                text: "Finish angle relative to the Ray pole(degrees):"+str(int(txtangleend.value))
+            Slider:
+                id: txtangleend
+                value: 10
+
+        BoxLayout:
+            orientation: "vertical"
+            size_hint_y: None
+            height: 80
+            Label:
+                text: "Line segments "+str(int(lnsegm.value))
+            Slider:
+                id: lnsegm
+                max: 1000
+                value: 200
+       
